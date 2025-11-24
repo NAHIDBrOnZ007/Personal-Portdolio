@@ -90,6 +90,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 typingDelay = 500;
             }
 
+            setTimeout(type, typingDelay);
+        }
+
+        type();
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 const headerOffset = 80;
                 const elementPosition = target.getBoundingClientRect().top;
@@ -160,17 +171,82 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialize all components
-    initializeProjects();
+    // Project Tab Functionality
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const projectContainers = document.querySelectorAll('.project-container');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tabId = button.getAttribute('data-tab');
+            
+            // Update active tab
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Show active container
+            projectContainers.forEach(container => {
+                container.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+
+    // Video Play Functionality
+    const videoItems = document.querySelectorAll('.video-item');
+    videoItems.forEach(item => {
+        const video = item.querySelector('video');
+        const playButton = item.querySelector('.play-button');
+        
+        if (video && playButton) {
+            // Play on hover
+            item.addEventListener('mouseenter', () => {
+                video.play().catch(e => console.log('Video play failed:', e));
+            });
+            
+            // Pause on mouse leave
+            item.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+            
+            // Click to play/pause
+            item.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play().catch(e => console.log('Video play failed:', e));
+                } else {
+                    video.pause();
+                }
+            });
+        }
+    });
+
+    // Initialize skill progress bars
     initializeSkillProgress();
-    initializeEnhancedProfile();
-    initializeMouseFollow();
 });
 
 // Project modal function
 function openProjectModal(projectTitle) {
     alert(`Opening details for: ${projectTitle}`);
     // In a real implementation, this would open a modal with project details
+}
+
+// Skill Progress Animation
+function initializeSkillProgress() {
+    const progressBars = document.querySelectorAll('.progress-fill');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressFill = entry.target;
+                const width = progressFill.getAttribute('data-width');
+                progressFill.style.width = width + '%';
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    progressBars.forEach(bar => {
+        observer.observe(bar);
+    });
 }
 
 // Handle window resize for responsive adjustments
