@@ -387,8 +387,9 @@
                             </a>
                         </div>
                     </div>
-
-
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- About Section -->
@@ -618,6 +619,337 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-4xl font-heading font-black text-center mb-4 section-title" data-aos="fade-up">
+                My Projects</h2>
+            <p class="text-lg sm:text-xl text-gray-400 text-center mb-8 sm:mb-12 max-w-3xl mx-auto" data-aos="fade-up"
+                data-aos-delay="100">
+                Explore my work across different domains
+            </p>
+
+            <!-- Project Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8" data-aos="fade-up" data-aos-delay="200">
+                <button class="tab-btn active" data-tab="projects-tab">
+                    <i data-lucide="briefcase" class="w-4 h-4 mr-2"></i>
+                    Projects
+                </button>
+                <button class="tab-btn" data-tab="photography-tab">
+                    <i data-lucide="camera" class="w-4 h-4 mr-2"></i>
+                    Photography
+                </button>
+                <button class="tab-btn" data-tab="videography-tab">
+                    <i data-lucide="video" class="w-4 h-4 mr-2"></i>
+                    Videography
+                </button>
+            </div>
+
+            <!-- Projects Tab Content -->
+            <div id="projects-tab" class="project-container active">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <img src="images/projects/project1.jpg" alt="E-Commerce Website">
+                            <div class="project-overlay">
+                                <button class="view-project-btn" onclick="openProjectModal('E-Commerce Website')">
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-Commerce Website</h3>
+                            <p class="project-description">Complete WooCommerce solution with custom design and payment integration.</p>
+                            <div class="web-features">
+                                <li>WordPress + WooCommerce</li>
+                                <li>Custom Payment Gateway</li>
+                                <li>Mobile Responsive</li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="images/projects/project2.jpg" alt="Business Dashboard">
+                            <div class="project-overlay">
+                                <button class="view-project-btn" onclick="openProjectModal('Business Dashboard')">
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Business Dashboard</h3>
+                            <p class="project-description">Automated dashboard with real-time analytics and reporting.</p>
+                            <div class="web-features">
+                                <li>Google Apps Script</li>
+                                <li>Data Visualization</li>
+                                <li>Automated Reports</li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-image">
+                            <img src="images/projects/project3.jpg" alt="Portfolio Website">
+                            <div class="project-overlay">
+                                <button class="view-project-btn" onclick="openProjectModal('Portfolio Website')">
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Portfolio Website</h3>
+                            <p class="project-description">Modern portfolio with interactive elements and smooth animations.</p>
+                            <div class="web-features">
+                                <li>Custom WordPress Theme</li>
+                                <li>Interactive Elements</li>
+                                <li>SEO Optimized</li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-image">
+                            <img src="images/projects/project4.jpg" alt="Automation System">
+                            <div class="project-overlay">
+                                <button class="view-project-btn" onclick="openProjectModal('Automation System')">
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Automation System</h3>
+                            <p class="project-description">Workflow automation for business processes with AI integration.</p>
+                            <div class="web-features">
+                                <li>AI Integration</li>
+                                <li>Workflow Automation</li>
+                                <li>Custom Scripts</li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="project-image">
+                            <img src="images/projects/project5.jpg" alt="Mobile App UI">
+                            <div class="project-overlay">
+                                <button class="view-project-btn" onclick="openProjectModal('Mobile App UI')">
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Mobile App UI</h3>
+                            <p class="project-description">User interface design for mobile applications with modern aesthetics.</p>
+                            <div class="web-features">
+                                <li>UI/UX Design</li>
+                                <li>Prototyping</li>
+                                <li>User Testing</li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="project-image">
+                            <img src="images/projects/project6.jpg" alt="Marketing Website">
+                            <div class="project-overlay">
+                                <button class="view-project-btn" onclick="openProjectModal('Marketing Website')">
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Marketing Website</h3>
+                            <p class="project-description">Lead generation website with integrated marketing tools.</p>
+                            <div class="web-features">
+                                <li>Lead Generation</li>
+                                <li>Analytics Integration</li>
+                                <li>Conversion Optimization</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photography Tab Content -->
+            <div id="photography-tab" class="project-container">
+                <div class="masonry-grid">
+                    <!-- Photo 1 -->
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/photography/photo1.jpg" alt="Urban Landscape">
+                        <div class="masonry-overlay">
+                            <h3 class="text-white font-heading font-bold text-lg">Urban Landscape</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-neon-blue/20 text-neon-blue text-xs rounded">City</span>
+                                <span class="px-2 py-1 bg-neon-purple/20 text-neon-purple text-xs rounded">Architecture</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2 -->
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/photography/photo2.jpg" alt="Portrait Session">
+                        <div class="masonry-overlay">
+                            <h3 class="text-white font-heading font-bold text-lg">Portrait Session</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-neon-blue/20 text-neon-blue text-xs rounded">Portrait</span>
+                                <span class="px-2 py-1 bg-neon-purple/20 text-neon-purple text-xs rounded">Studio</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 3 -->
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/photography/photo3.jpg" alt="Nature Photography">
+                        <div class="masonry-overlay">
+                            <h3 class="text-white font-heading font-bold text-lg">Nature Photography</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-neon-blue/20 text-neon-blue text-xs rounded">Nature</span>
+                                <span class="px-2 py-1 bg-neon-purple/20 text-neon-purple text-xs rounded">Landscape</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 4 -->
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="400">
+                        <img src="images/photography/photo4.jpg" alt="Street Photography">
+                        <div class="masonry-overlay">
+                            <h3 class="text-white font-heading font-bold text-lg">Street Photography</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-neon-blue/20 text-neon-blue text-xs rounded">Street</span>
+                                <span class="px-2 py-1 bg-neon-purple/20 text-neon-purple text-xs rounded">Urban</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 5 -->
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="500">
+                        <img src="images/photography/photo5.jpg" alt="Product Photography">
+                        <div class="masonry-overlay">
+                            <h3 class="text-white font-heading font-bold text-lg">Product Photography</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-neon-blue/20 text-neon-blue text-xs rounded">Product</span>
+                                <span class="px-2 py-1 bg-neon-purple/20 text-neon-purple text-xs rounded">Commercial</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 6 -->
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="600">
+                        <img src="images/photography/photo6.jpg" alt="Abstract Photography">
+                        <div class="masonry-overlay">
+                            <h3 class="text-white font-heading font-bold text-lg">Abstract Photography</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-neon-blue/20 text-neon-blue text-xs rounded">Abstract</span>
+                                <span class="px-2 py-1 bg-neon-purple/20 text-neon-purple text-xs rounded">Creative</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Videography Tab Content -->
+            <div id="videography-tab" class="project-container">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Video 1 -->
+                    <div class="video-item" data-aos="fade-up" data-aos-delay="100">
+                        <video muted loop class="video-thumbnail">
+                            <source src="videos/video1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-button">
+                            <i data-lucide="play" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="video-overlay">
+                            <h3 class="text-white font-heading font-bold text-lg">Commercial Ad</h3>
+                            <p class="text-gray-300 text-sm">60s • 4K</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="video-item" data-aos="fade-up" data-aos-delay="200">
+                        <video muted loop class="video-thumbnail">
+                            <source src="videos/video2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-button">
+                            <i data-lucide="play" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="video-overlay">
+                            <h3 class="text-white font-heading font-bold text-lg">Documentary</h3>
+                            <p class="text-gray-300 text-sm">5:30 • 4K</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div class="video-item" data-aos="fade-up" data-aos-delay="300">
+                        <video muted loop class="video-thumbnail">
+                            <source src="videos/video3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-button">
+                            <i data-lucide="play" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="video-overlay">
+                            <h3 class="text-white font-heading font-bold text-lg">Music Video</h3>
+                            <p class="text-gray-300 text-sm">3:45 • 4K</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 4 -->
+                    <div class="video-item" data-aos="fade-up" data-aos-delay="400">
+                        <video muted loop class="video-thumbnail">
+                            <source src="videos/video4.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-button">
+                            <i data-lucide="play" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="video-overlay">
+                            <h3 class="text-white font-heading font-bold text-lg">Event Coverage</h3>
+                            <p class="text-gray-300 text-sm">2:15 • 4K</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 5 -->
+                    <div class="video-item" data-aos="fade-up" data-aos-delay="500">
+                        <video muted loop class="video-thumbnail">
+                            <source src="videos/video5.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-button">
+                            <i data-lucide="play" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="video-overlay">
+                            <h3 class="text-white font-heading font-bold text-lg">Corporate Video</h3>
+                            <p class="text-gray-300 text-sm">2:30 • 4K</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 6 -->
+                    <div class="video-item" data-aos="fade-up" data-aos-delay="600">
+                        <video muted loop class="video-thumbnail">
+                            <source src="videos/video6.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-button">
+                            <i data-lucide="play" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="video-overlay">
+                            <h3 class="text-white font-heading font-bold text-lg">Short Film</h3>
+                            <p class="text-gray-300 text-sm">8:20 • 4K</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Journey Timeline Section -->
     <section id="timeline" class="py-16 sm:py-20">
         <div class="container mx-auto px-4 sm:px-6">
@@ -662,112 +994,122 @@
                                 Building scalable applications and exploring new frontiers.</p>
                         </div>
                     </div>
-                    <p class="text-lg sm:text-xl text-gray-400 text-center mb-8 sm:mb-12 max-w-3xl mx-auto"
-                        data-aos="fade-up" data-aos-delay="100">
-                        Let's work together to bring your ideas to life
-                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="grid lg:grid-cols-3 gap-8">
-                        <!-- Contact Info -->
-                        <div data-aos="fade-right" data-aos-delay="100">
-                            <div class="glass-card p-6 sm:p-8 h-full">
-                                <h3 class="text-xl font-heading font-bold mb-6 gradient-text">Contact Information</h3>
-                                <div class="space-y-6">
-                                    <div class="contact-item">
-                                        <div class="contact-icon">
-                                            <i data-lucide="mail" class="w-5 h-5"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-heading font-semibold">Email</h4>
-                                            <p class="text-gray-400 text-sm">contact@mostakahmed.com</p>
-                                        </div>
-                                    </div>
-                                    <div class="contact-item">
-                                        <div class="contact-icon">
-                                            <i data-lucide="map-pin" class="w-5 h-5"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-heading font-semibold">Location</h4>
-                                            <p class="text-gray-400 text-sm">Bangladesh</p>
-                                        </div>
-                                    </div>
-                                    <div class="contact-item">
-                                        <div class="contact-icon">
-                                            <i data-lucide="clock" class="w-5 h-5"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-heading font-semibold">Availability</h4>
-                                            <p class="text-gray-400 text-sm">24/7 for urgent projects</p>
-                                        </div>
-                                    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-4xl font-heading font-black text-center mb-4 section-title" data-aos="fade-up">
+                Get In Touch</h2>
+            <p class="text-lg sm:text-xl text-gray-400 text-center mb-8 sm:mb-12 max-w-3xl mx-auto"
+                data-aos="fade-up" data-aos-delay="100">
+                Let's work together to bring your ideas to life
+            </p>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Contact Info -->
+                <div data-aos="fade-right" data-aos-delay="100">
+                    <div class="glass-card p-6 sm:p-8 h-full">
+                        <h3 class="text-xl font-heading font-bold mb-6 gradient-text">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
                                 </div>
-
-                                <!-- Social Links -->
-                                <div class="mt-8 pt-6 border-t border-white/10">
-                                    <h4 class="font-heading font-semibold mb-4">Follow Me</h4>
-                                    <div class="flex space-x-4">
-                                        <a href="https://facebook.com/yourprofile" class="social-btn facebook"
-                                            target="_blank">
-                                            <i data-lucide="facebook" class="w-5 h-5"></i>
-                                        </a>
-                                        <a href="https://linkedin.com/in/yourprofile" class="social-btn linkedin"
-                                            target="_blank">
-                                            <i data-lucide="linkedin" class="w-5 h-5"></i>
-                                        </a>
-                                        <a href="https://instagram.com/yourprofile" class="social-btn instagram"
-                                            target="_blank">
-                                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                                        </a>
-                                        <a href="https://github.com/yourprofile" class="social-btn github"
-                                            target="_blank">
-                                            <i data-lucide="github" class="w-5 h-5"></i>
-                                        </a>
-                                    </div>
+                                <div>
+                                    <h4 class="font-heading font-semibold">Email</h4>
+                                    <p class="text-gray-400 text-sm">contact@mostakahmed.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-semibold">Location</h4>
+                                    <p class="text-gray-400 text-sm">Bangladesh</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i data-lucide="clock" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-semibold">Availability</h4>
+                                    <p class="text-gray-400 text-sm">24/7 for urgent projects</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Contact Form -->
-                        <div class="lg:col-span-2" data-aos="fade-left" data-aos-delay="200">
-                            <div class="glass-card p-6 sm:p-8">
-                                <h3 class="text-xl font-heading font-bold mb-6 gradient-text">Send Me a Message</h3>
-                                <form class="space-y-6 contact-form">
-                                    <div class="grid md:grid-cols-2 gap-6">
-                                        <div class="form-group">
-                                            <label class="block text-sm font-medium text-gray-300 mb-2">Your
-                                                Name</label>
-                                            <input type="text" placeholder="Enter your name" class="form-input"
-                                                required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="block text-sm font-medium text-gray-300 mb-2">Your
-                                                Email</label>
-                                            <input type="email" placeholder="Enter your email" class="form-input"
-                                                required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
-                                        <input type="text" placeholder="What is this regarding?" class="form-input"
-                                            required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="block text-sm font-medium text-gray-300 mb-2">Your Message</label>
-                                        <textarea placeholder="Tell me about your project..." rows="5"
-                                            class="form-input" required></textarea>
-                                    </div>
-                                    <button type="submit" class="glass-btn primary w-full group">
-                                        <span class="flex items-center justify-center">
-                                            Send Message
-                                            <i data-lucide="send"
-                                                class="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform"></i>
-                                        </span>
-                                    </button>
-                                </form>
+                        <!-- Social Links -->
+                        <div class="mt-8 pt-6 border-t border-white/10">
+                            <h4 class="font-heading font-semibold mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://facebook.com/yourprofile" class="social-btn facebook"
+                                    target="_blank">
+                                    <i data-lucide="facebook" class="w-5 h-5"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/yourprofile" class="social-btn linkedin"
+                                    target="_blank">
+                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                </a>
+                                <a href="https://instagram.com/yourprofile" class="social-btn instagram"
+                                    target="_blank">
+                                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                                </a>
+                                <a href="https://github.com/yourprofile" class="social-btn github"
+                                    target="_blank">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-2" data-aos="fade-left" data-aos-delay="200">
+                    <div class="glass-card p-6 sm:p-8">
+                        <h3 class="text-xl font-heading font-bold mb-6 gradient-text">Send Me a Message</h3>
+                        <form class="space-y-6 contact-form">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="form-group">
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Your
+                                        Name</label>
+                                    <input type="text" placeholder="Enter your name" class="form-input"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Your
+                                        Email</label>
+                                    <input type="email" placeholder="Enter your email" class="form-input"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                                <input type="text" placeholder="What is this regarding?" class="form-input"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Your Message</label>
+                                <textarea placeholder="Tell me about your project..." rows="5"
+                                    class="form-input" required></textarea>
+                            </div>
+                            <button type="submit" class="glass-btn primary w-full group">
+                                <span class="flex items-center justify-center">
+                                    Send Message
+                                    <i data-lucide="send"
+                                        class="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Resume Preview Section -->
