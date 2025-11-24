@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostak Ahmed - 3D Glass Portfolio</title>
+    <meta name="description" content="Mostak Ahmed - WordPress Developer & AI Automation Specialist">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Mostak Ahmed - 3D Glass Portfolio">
+    <meta property="og:description" content="WordPress Developer, AI Automation Specialist">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:url" content="https://mostakahmed.com">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'heading': ['Space Grotesk', 'sans-serif'],
+                        'accent': ['Orbitron', 'monospace'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        neon: {
+                            blue: '#00f3ff',
+                            purple: '#bc13fe',
+                            pink: '#ff0055',
+                            dark: '#050505'
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'typing': 'typing 3.5s steps(40, end)',
+                        'float': 'float 6s ease-in-out infinite',
+                        'tilt': 'tilt 10s infinite linear',
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                        'gradient-shift': 'gradientShift 3s ease infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'spin-slow': 'spin 3s linear infinite',
+                        'particle-float': 'particleFloat 20s linear infinite',
+                        'text-glow': 'textGlow 2s ease-in-out infinite alternate',
+                        'orbit': 'orbit 20s linear infinite',
+                        'orbit-reverse': 'orbitReverse 15s linear infinite',
+                        'orbit-slow': 'orbitSlow 25s linear infinite',
+                        'orbit-fast': 'orbitFast 12s linear infinite',
+                        'pulse-ring': 'pulseRing 3s ease-out infinite',
+                        'float-delayed': 'floatDelayed 8s ease-in-out infinite',
+                        'spin-reverse': 'spinReverse 3s linear infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        floatDelayed: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        tilt: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(0, 243, 255, 0.5)' },
+                            '50%': { boxShadow: '0 0 40px rgba(188, 19, 254, 0.8)' },
+                        },
+                        gradientShift: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        particleFloat: {
+                            '0%': { transform: 'translateY(100vh) translateX(0)' },
+                            '100%': { transform: 'translateY(-100px) translateX(100px)' },
+                        },
+                        textGlow: {
+                            '0%': { textShadow: '0 0 10px rgba(0, 243, 255, 0.7)' },
+                            '100%': { textShadow: '0 0 20px rgba(188, 19, 254, 0.9), 0 0 30px rgba(188, 19, 254, 0.6)' },
+                        },
+                        orbit: {
+                            '0%': { transform: 'rotate(0deg) translateX(100px) rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg) translateX(100px) rotate(-360deg)' },
+                        },
+                        orbitReverse: {
+                            '0%': { transform: 'rotate(0deg) translateX(70px) rotate(0deg)' },
+                            '100%': { transform: 'rotate(-360deg) translateX(70px) rotate(360deg)' },
+                        },
+                        orbitSlow: {
+                            '0%': { transform: 'rotate(0deg) translateX(120px) rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg) translateX(120px) rotate(-360deg)' },
+                        },
+                        orbitFast: {
+                            '0%': { transform: 'rotate(0deg) translateX(80px) rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg) translateX(80px) rotate(-360deg)' },
+                        },
+                        pulseRing: {
+                            '0%': { transform: 'scale(0.8)', opacity: '1' },
+                            '80%, 100%': { transform: 'scale(2.2)', opacity: '0' },
+                        },
+                        spinReverse: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(-360deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-neon-dark text-white overflow-x-hidden font-body">
+    <!-- 3D Background with Particles -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-neon-dark via-purple-900/20 to-neon-dark"></div>
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl animate-blob"></div>
+        <div
+            class="absolute top-1/3 right-1/4 w-80 h-80 bg-neon-purple/10 rounded-full blur-3xl animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="absolute bottom-1/4 left-1/3 w-72 h-72 bg-neon-pink/10 rounded-full blur-3xl animate-blob animation-delay-4000">
+        </div>
+        <div
+            class="absolute top-3/4 right-1/3 w-64 h-64 bg-green-400/10 rounded-full blur-3xl animate-blob animation-delay-3000">
+        </div>
+
+        <!-- Floating Particles -->
+        <div class="particles-container">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="container mx-auto px-6 py-3 md:py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-heading font-bold gradient-text flex items-center">
+                    MostakAhmed
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#timeline" class="nav-link">Journey</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden glass-btn menu-toggle" id="menuToggle">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+
+                <!-- Download CV Button (Desktop) -->
+                <button class="hidden md:flex glass-btn download-cv text-sm md:text-base">
+                    <span class="flex items-center">
+                        <span>Download CV</span>
+                        <i data-lucide="download" class="w-4 h-4 ml-2"></i>
+                    </span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu hidden md:hidden mt-4 pb-4" id="mobileMenu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="nav-link mobile-nav-link">Home</a>
+                    <a href="#about" class="nav-link mobile-nav-link">About</a>
+                    <a href="#skills" class="nav-link mobile-nav-link">Skills</a>
+                    <a href="#projects" class="nav-link mobile-nav-link">Projects</a>
+                    <a href="#timeline" class="nav-link mobile-nav-link">Journey</a>
+                    <a href="#contact" class="nav-link mobile-nav-link">Contact</a>
+                    <button class="glass-btn download-cv w-full justify-center">
+                        <span class="flex items-center">
+                            <span>Download CV</span>
+                            <i data-lucide="download" class="w-4 h-4 ml-2"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div class="text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="glass-badge">
+                        <div class="w-2 h-2 bg-neon-blue rounded-full mr-2 animate-pulse"></div>
+                        <span class="text-neon-blue text-sm">Available for new projects</span>
+                    </div>
+
+                    <h1
+                        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black mb-4 sm:mb-6 tracking-tight">
+                        <span class="text-white">Mostak</span>
+                        <span class="gradient-text animate-text-glow ml-2">Ahmed</span>
+                    </h1>
+
+                    <div class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 h-8 font-light">
+                        <span class="typing-text"></span>
+                        <span class="typing-cursor">|</span>
+                    </div>
+
+                    <p class="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        Crafting digital experiences with cutting-edge technology.
+                        WordPress development meets AI automation in perfect harmony.
+                        Transforming ideas into powerful digital solutions that drive results.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                        <button class="glass-btn primary group text-base sm:text-lg">
+                            <span class="flex items-center font-semibold">
+                                View My Work
+                                <i data-lucide="arrow-right"
+                                    class="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-2 transition-transform"></i>
+                            </span>
+                        </button>
+                        <button class="glass-btn secondary group text-base sm:text-lg">
+                            <span class="flex items-center font-semibold">
+                                Get In Touch
+                                <i data-lucide="message-circle"
+                                    class="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:scale-110 transition-transform"></i>
+                            </span>
+                        </button>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-12">
+                        <div class="glass-stat" data-aos="fade-up" data-aos-delay="100">
+                            <div class="text-xl sm:text-2xl font-accent font-bold text-neon-blue">12M+</div>
+                            <div class="text-gray-400 text-xs sm:text-sm">Views</div>
+                        </div>
+                        <div class="glass-stat" data-aos="fade-up" data-aos-delay="200">
+                            <div class="text-xl sm:text-2xl font-accent font-bold text-neon-purple">50+</div>
+                            <div class="text-gray-400 text-xs sm:text-sm">Projects</div>
+                        </div>
+                        <div class="glass-stat" data-aos="fade-up" data-aos-delay="300">
+                            <div class="text-xl sm:text-2xl font-accent font-bold text-neon-pink">4+</div>
+                            <div class="text-gray-400 text-xs sm:text-sm">Years</div>
+                        </div>
+                        <div class="glass-stat" data-aos="fade-up" data-aos-delay="400">
+                            <div class="text-xl sm:text-2xl font-accent font-bold text-green-400">5K+</div>
+                            <div class="text-gray-400 text-xs sm:text-sm">Followers</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Profile Section -->
+                <div class="relative" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="relative">
+                        <!-- Profile Image with Animated Border -->
+                        <div class="relative mx-auto w-64 h-64 md:w-80 md:h-80">
+                            <div
+                                class="absolute inset-0 rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink animate-pulse-glow">
+                            </div>
+                            <div class="absolute inset-2 rounded-full bg-neon-dark"></div>
+                            <div class="absolute inset-4 rounded-full overflow-hidden border-2 border-neon-blue/50">
+                                <img src="images/profile/WhatsApp Image 2025-09-21 at 19.48.36_5b5b2888.webp"
+                                    alt="Mostak Ahmed" class="w-full h-full object-cover">
+                            </div>
+
+                            <!-- Pulsing Rings -->
+                            <div class="absolute inset-0 rounded-full border-2 border-neon-blue/30 animate-pulse-ring">
+                            </div>
+                            <div class="absolute inset-0 rounded-full border-2 border-neon-purple/30 animate-pulse-ring"
+                                style="animation-delay: 1s;"></div>
+                            <div class="absolute inset-0 rounded-full border-2 border-neon-pink/30 animate-pulse-ring"
+                                style="animation-delay: 2s;"></div>
+                        </div>
+
+                        <!-- Always Visible Animated Icons -->
+                        <div class="absolute top-0 left-0 w-full h-full">
+                            <!-- Orbiting Icons -->
+                            <div class="orbit-icon orbit-1">
+                                <div class="icon-container bg-neon-blue/20 border border-neon-blue/50">
+                                    <i data-lucide="code" class="w-5 h-5 text-neon-blue"></i>
+                                </div>
+                            </div>
+                            <div class="orbit-icon orbit-2">
+                                <div class="icon-container bg-neon-purple/20 border border-neon-purple/50">
+                                    <i data-lucide="layout" class="w-5 h-5 text-neon-purple"></i>
+                                </div>
+                            </div>
+                            <div class="orbit-icon orbit-3">
+                                <div class="icon-container bg-neon-pink/20 border border-neon-pink/50">
+                                    <i data-lucide="bot" class="w-5 h-5 text-neon-pink"></i>
+                                </div>
+                            </div>
+                            <div class="orbit-icon orbit-4">
+                                <div class="icon-container bg-green-400/20 border border-green-400/50">
+                                    <i data-lucide="database" class="w-5 h-5 text-green-400"></i>
+                                </div>
+                            </div>
+
+                            <!-- Floating Icons -->
+                            <div class="floating-icon floating-1">
+                                <div class="icon-container bg-neon-blue/20 border border-neon-blue/50">
+                                    <i data-lucide="zap" class="w-4 h-4 text-neon-blue"></i>
+                                </div>
+                            </div>
+                            <div class="floating-icon floating-2">
+                                <div class="icon-container bg-neon-purple/20 border border-neon-purple/50">
+                                    <i data-lucide="trending-up" class="w-4 h-4 text-neon-purple"></i>
+                                </div>
+                            </div>
+                            <div class="floating-icon floating-3">
+                                <div class="icon-container bg-neon-pink/20 border border-neon-pink/50">
+                                    <i data-lucide="shield" class="w-4 h-4 text-neon-pink"></i>
+                                </div>
+                            </div>
+                            <div class="floating-icon floating-4">
+                                <div class="icon-container bg-green-400/20 border border-green-400/50">
+                                    <i data-lucide="heart" class="w-4 h-4 text-green-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links - Simple Version -->
+                    <div class="mt-8 text-center">
+                        <h3 class="text-lg font-heading font-bold mb-4 gradient-text">Connect With Me</h3>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://facebook.com/yourprofile" class="social-icon facebook" target="_blank">
+                                <i data-lucide="facebook" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://instagram.com/yourprofile" class="social-icon instagram" target="_blank">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/yourprofile" class="social-icon linkedin" target="_blank">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://github.com/yourprofile" class="social-icon github" target="_blank">
+                                <i data-lucide="github" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://twitter.com/yourprofile" class="social-icon twitter" target="_blank">
+                                <i data-lucide="twitter" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-4xl font-heading font-black text-center mb-4 section-title" data-aos="fade-up">
+                About Me</h2>
+            <p class="text-lg sm:text-xl text-gray-400 text-center mb-8 sm:mb-12 max-w-3xl mx-auto" data-aos="fade-up"
+                data-aos-delay="200">
+                Passionate Developer & Digital Creator from Bangladesh
+            </p>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <div class="glass-card p-6 sm:p-8" data-aos="fade-right" data-aos-duration="800">
+                    <h3 class="text-xl sm:text-2xl font-heading font-bold mb-4 sm:mb-6 gradient-text">My Story</h3>
+                    <div class="space-y-4">
+                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                            I'm Mostak Ahmed, a self-taught developer and digital creator from Bangladesh. My journey
+                            began in 2018 with mobile photography, where I achieved over 12 million views across various
+                            platforms. This early success taught me the power of visual storytelling and user
+                            engagement.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                            Driven by curiosity and passion for technology, I transitioned into web development in 2020.
+                            Starting with WordPress, I quickly mastered Elementor Pro, WooCommerce, and began creating
+                            stunning digital experiences for clients worldwide. My background in photography gave me a
+                            unique edge in understanding design principles and user experience.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                            In 2022, I discovered the power of automation and AI integration. Mastering Google Apps
+                            Script opened new possibilities for creating intelligent workflows, automated systems, and
+                            data-driven solutions that save time and increase efficiency for businesses.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 sm:p-8" data-aos="fade-left" data-aos-duration="800">
+                    <h3 class="text-xl sm:text-2xl font-heading font-bold mb-4 sm:mb-6 gradient-text">My Philosophy</h3>
+                    <div class="space-y-4">
+                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                            I believe that technology should serve creativity, not hinder it. Every project is an
+                            opportunity to blend technical excellence with artistic vision. Whether it's a WordPress
+                            website, an automation system, or a marketing dashboard, I approach each challenge with the
+                            same dedication to quality and innovation.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                            My mission is to create digital solutions that not only look beautiful but also deliver real
+                            business value. I'm committed to continuous learning and staying at the forefront of web
+                            technologies and AI advancements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vision & Mission Cards -->
+            <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
+                <div class="glass-card vision-mission-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card-icon vision-icon">
+                        <i data-lucide="eye" class="w-8 h-8 sm:w-10 sm:h-10"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-heading font-bold mb-4 text-neon-blue">My Vision</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        To create a digital landscape where technology and creativity merge seamlessly, empowering
+                        businesses and individuals to achieve their full potential through innovative web solutions and
+                        intelligent automation.
+                    </p>
+                </div>
+
+                <div class="glass-card vision-mission-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card-icon mission-icon">
+                        <i data-lucide="target" class="w-8 h-8 sm:w-10 sm:h-10"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-heading font-bold mb-4 text-neon-purple">My Mission</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        To deliver exceptional digital experiences that combine cutting-edge technology with
+                        user-centric design, helping clients transform their ideas into powerful online presence and
+                        automated workflows that drive growth and efficiency.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-4xl font-heading font-black text-center mb-4 section-title" data-aos="fade-up">
+                Skills & Expertise</h2>
+            <p class="text-lg sm:text-xl text-gray-400 text-center mb-8 sm:mb-12 max-w-3xl mx-auto" data-aos="fade-up"
+                data-aos-delay="100">
+                A diverse skill set to bring your digital vision to life
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                <div class="glass-card skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i data-lucide="globe" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-heading font-semibold">Web Development</h3>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="90"></div>
+                        </div>
+                        <span class="progress-text font-accent">90%</span>
+                    </div>
+                    <ul class="skill-list">
+                        <li>WordPress Development</li>
+                        <li>Elementor Pro</li>
+                        <li>WooCommerce</li>
+                        <li>HTML/CSS</li>
+                        <li>SEO Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i data-lucide="bot" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-heading font-semibold">Automation & AI</h3>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="85"></div>
+                        </div>
+                        <span class="progress-text font-accent">85%</span>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Google Apps Script</li>
+                        <li>Sheet Automation</li>
+                        <li>AI Integration</li>
+                        <li>Workflow Automation</li>
+                        <li>Dashboard Creation</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i data-lucide="trending-up" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-heading font-semibold">Marketing</h3>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="80"></div>
+                        </div>
+                        <span class="progress-text font-accent">80%</span>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Digital Marketing</li>
+                        <li>Social Media</li>
+                        <li>Content Strategy</li>
+                        <li>Lead Generation</li>
+                        <li>Analytics</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card skill-category" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i data-lucide="palette" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-heading font-semibold">Creative Design</h3>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="85"></div>
+                        </div>
+                        <span class="progress-text font-accent">85%</span>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Graphic Design</li>
+                        <li>Photo Retouching</li>
+                        <li>Color Grading</li>
+                        <li>Video Editing</li>
+                        <li>Brand Design</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card skill-category" data-aos="fade-up" data-aos-delay="500">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i data-lucide="briefcase" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-heading font-semibold">Business Tools</h3>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="75"></div>
+                        </div>
+                        <span class="progress-text font-accent">75%</span>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Google Suite</li>
+                        <li>Data Management</li>
+                        <li>Automated Calculators</li>
+                        <li>PDF Reports</li>
+                        <li>Client Management</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card skill-category" data-aos="fade-up" data-aos-delay="600">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i data-lucide="database" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-heading font-semibold">Data Analysis</h3>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="70"></div>
+                        </div>
+                        <span class="progress-text font-accent">70%</span>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Data Visualization</li>
+                        <li>Google Analytics</li>
+                        <li>Performance Metrics</li>
+                        <li>KPI Tracking</li>
+                        <li>Reporting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline Section -->
+    <section id="timeline" class="py-16 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-4xl font-heading font-black text-center mb-4 section-title" data-aos="fade-up">
+                My Journey</h2>
+            <p class="text-lg sm:text-xl text-gray-400 text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up"
+                data-aos-delay="100">
+                From photography to full-stack development
+            </p>
+
+            <div class="glass-card p-6 sm:p-8 max-w-4xl mx-auto">
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-date">2018</div>
+                        <div class="timeline-content">
+                            <h3 class="font-heading font-bold text-lg mb-2">Mobile Photography</h3>
+                            <p class="text-gray-400">Started with mobile photography, gained 12M+ views across
+                                platforms. Learned composition, editing, and visual storytelling.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                        <div class="timeline-date">2020</div>
+                        <div class="timeline-content">
+                            <h3 class="font-heading font-bold text-lg mb-2">Web Development</h3>
+                            <p class="text-gray-400">Transitioned to WordPress development and digital marketing.
+                                Mastered Elementor Pro, WooCommerce, and SEO optimization.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content">
+                            <h3 class="font-heading font-bold text-lg mb-2">AI Automation</h3>
+                            <p class="text-gray-400">Mastered Google Apps Script and AI integration for automation.
+                                Built intelligent workflows and automated systems for clients.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                            <h3 class="font-heading font-bold text-lg mb-2">Full Stack</h3>
+                            <p class="text-gray-400">Expanding into React, Node.js and advanced web technologies.
+                                Building scalable applications and exploring new frontiers.</p>
+                        </div>
+                    </div>
+                    <p class="text-lg sm:text-xl text-gray-400 text-center mb-8 sm:mb-12 max-w-3xl mx-auto"
+                        data-aos="fade-up" data-aos-delay="100">
+                        Let's work together to bring your ideas to life
+                    </p>
+
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <!-- Contact Info -->
+                        <div data-aos="fade-right" data-aos-delay="100">
+                            <div class="glass-card p-6 sm:p-8 h-full">
+                                <h3 class="text-xl font-heading font-bold mb-6 gradient-text">Contact Information</h3>
+                                <div class="space-y-6">
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i data-lucide="mail" class="w-5 h-5"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-heading font-semibold">Email</h4>
+                                            <p class="text-gray-400 text-sm">contact@mostakahmed.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-heading font-semibold">Location</h4>
+                                            <p class="text-gray-400 text-sm">Bangladesh</p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i data-lucide="clock" class="w-5 h-5"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-heading font-semibold">Availability</h4>
+                                            <p class="text-gray-400 text-sm">24/7 for urgent projects</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Social Links -->
+                                <div class="mt-8 pt-6 border-t border-white/10">
+                                    <h4 class="font-heading font-semibold mb-4">Follow Me</h4>
+                                    <div class="flex space-x-4">
+                                        <a href="https://facebook.com/yourprofile" class="social-btn facebook"
+                                            target="_blank">
+                                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                                        </a>
+                                        <a href="https://linkedin.com/in/yourprofile" class="social-btn linkedin"
+                                            target="_blank">
+                                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                        </a>
+                                        <a href="https://instagram.com/yourprofile" class="social-btn instagram"
+                                            target="_blank">
+                                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                                        </a>
+                                        <a href="https://github.com/yourprofile" class="social-btn github"
+                                            target="_blank">
+                                            <i data-lucide="github" class="w-5 h-5"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="lg:col-span-2" data-aos="fade-left" data-aos-delay="200">
+                            <div class="glass-card p-6 sm:p-8">
+                                <h3 class="text-xl font-heading font-bold mb-6 gradient-text">Send Me a Message</h3>
+                                <form class="space-y-6 contact-form">
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div class="form-group">
+                                            <label class="block text-sm font-medium text-gray-300 mb-2">Your
+                                                Name</label>
+                                            <input type="text" placeholder="Enter your name" class="form-input"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="block text-sm font-medium text-gray-300 mb-2">Your
+                                                Email</label>
+                                            <input type="email" placeholder="Enter your email" class="form-input"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                                        <input type="text" placeholder="What is this regarding?" class="form-input"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="block text-sm font-medium text-gray-300 mb-2">Your Message</label>
+                                        <textarea placeholder="Tell me about your project..." rows="5"
+                                            class="form-input" required></textarea>
+                                    </div>
+                                    <button type="submit" class="glass-btn primary w-full group">
+                                        <span class="flex items-center justify-center">
+                                            Send Message
+                                            <i data-lucide="send"
+                                                class="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                                        </span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <!-- Resume Preview Section -->
+    <section id="resume" class="py-16 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-4xl font-heading font-black text-center mb-4 section-title" data-aos="fade-up">
+                Resume Preview</h2>
+            <p class="text-lg sm:text-xl text-gray-400 text-center mb-8 sm:mb-12 max-w-3xl mx-auto" data-aos="fade-up"
+                data-aos-delay="100">
+                Quick overview of my experience and skills
+            </p>
+
+            <div class="glass-card p-6 sm:p-8 max-w-4xl mx-auto" data-aos="zoom-in">
+                <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
+                    <div>
+                        <h3 class="font-heading font-bold text-xl mb-4 text-neon-blue">Experience</h3>
+                        <div class="space-y-4">
+                            <div class="border-l-2 border-neon-blue pl-4">
+                                <h4 class="font-heading font-semibold">WordPress Developer</h4>
+                                <p class="text-gray-400 text-sm">2021 - Present</p>
+                                <p class="text-gray-300 text-sm mt-1">50+ successful projects delivered</p>
+                            </div>
+                            <div class="border-l-2 border-neon-purple pl-4">
+                                <h4 class="font-heading font-semibold">AI Automation Specialist</h4>
+                                <p class="text-gray-400 text-sm">2022 - Present</p>
+                                <p class="text-gray-300 text-sm mt-1">Built automated systems for clients worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-xl mb-4 text-neon-purple">Education</h3>
+                        <div class="space-y-4">
+                            <div class="border-l-2 border-neon-pink pl-4">
+                                <h4 class="font-heading font-semibold">Self-Taught Developer</h4>
+                                <p class="text-gray-400 text-sm">2018 - Present</p>
+                                <p class="text-gray-300 text-sm mt-1">Continuous learning through projects</p>
+                            </div>
+                            <div class="border-l-2 border-green-400 pl-4">
+                                <h4 class="font-heading font-semibold">Online Certifications</h4>
+                                <p class="text-gray-400 text-sm">Multiple</p>
+                                <p class="text-gray-300 text-sm mt-1">Web Development & AI Specializations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 sm:mt-8 text-center">
+                    <button class="glass-btn primary download-cv">
+                        <span class="flex items-center">
+                            Download Full Resume
+                            <i data-lucide="download" class="w-4 h-4 ml-2"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gradient-to-r from-neon-blue to-neon-purple">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-xl font-heading font-bold gradient-text mb-4">Mostak Ahmed</div>
+            <p class="text-gray-400 mb-6">WordPress Developer • AI Automation Specialist • Creative Designer</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://facebook.com/yourprofile" class="text-gray-400 hover:text-neon-blue transition-colors"
+                    target="_blank">Facebook</a>
+                <a href="https://linkedin.com/in/yourprofile"
+                    class="text-gray-400 hover:text-neon-purple transition-colors" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com/yourprofile" class="text-gray-400 hover:text-neon-pink transition-colors"
+                    target="_blank">Instagram</a>
+                <a href="https://github.com/yourprofile" class="text-gray-400 hover:text-green-400 transition-colors"
+                    target="_blank">GitHub</a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2024 Mostak Ahmed. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
