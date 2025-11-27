@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
         lucide.createIcons();
     }
 
-    // Initialize AOS (Animate On Scroll)
+    // Initialize AOS (Animate On Scroll) - Simplified
     AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
+        duration: 600,
+        easing: 'ease-out',
         once: true,
         mirror: false,
-        offset: 100
+        offset: 50
     });
 
     // Mobile Menu Toggle
