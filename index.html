@@ -106,12 +106,12 @@
                 </button>
 
                 <!-- Download CV Button (Desktop) -->
-                <button class="hidden md:flex glass-btn download-cv text-sm md:text-base">
+                <a href="cv.pdf" download class="hidden md:flex glass-btn download-cv text-sm md:text-base" aria-label="Download CV">
                     <span class="flex items-center">
                         <span>Download CV</span>
                         <i data-lucide="download" class="w-4 h-4 ml-2"></i>
                     </span>
-                </button>
+                </a>
             </div>
 
             <!-- Mobile Menu -->
@@ -123,12 +123,12 @@
                     <a href="#projects" class="nav-link mobile-nav-link">Projects</a>
                     <a href="#timeline" class="nav-link mobile-nav-link">Journey</a>
                     <a href="#contact" class="nav-link mobile-nav-link">Contact</a>
-                    <button class="glass-btn download-cv w-full justify-center">
+                    <a href="cv.pdf" download class="glass-btn download-cv w-full justify-center" aria-label="Download CV">
                         <span class="flex items-center">
                             <span>Download CV</span>
                             <i data-lucide="download" class="w-4 h-4 ml-2"></i>
                         </span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -973,12 +973,12 @@ function openProjectLink(button) {
                     </div>
                 </div>
                 <div class="mt-6 sm:mt-8 text-center">
-                    <button class="glass-btn primary download-cv">
+                    <a href="cv.pdf" download class="glass-btn primary download-cv" aria-label="Download Full Resume">
                         <span class="flex items-center">
                             Download Full Resume
                             <i data-lucide="download" class="w-4 h-4 ml-2"></i>
                         </span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1005,5 +1005,6 @@ function openProjectLink(button) {
 
     <script src="script.js"></script>
 </body>
+
 
 </html>
