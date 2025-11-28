@@ -59,6 +59,11 @@ body {
     font-weight: 500;
     transition: all 0.2s ease;
     cursor: pointer;
+    display: inline-flex; /* ensure anchors and buttons align content */
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* consistent spacing between text and icon */
+    text-decoration: none; /* remove underline for anchors */
 }
 
 .glass-btn.primary {
@@ -836,9 +841,14 @@ footer {
         font-size: 1.25rem;
     }
     
-    .glass-btn.download-cv {
-        padding: 8px 12px;
-        font-size: 0.875rem;
+        .glass-btn.download-cv {
+        padding: 10px 16px; /* slightly larger to match other CTA sizes */
+        font-size: 0.95rem;
+        min-width: 200px; /* give a consistent width so text and icon display nicely */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
     }
     
     nav .flex.justify-between.items-center {
